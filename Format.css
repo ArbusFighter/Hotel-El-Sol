@@ -1,0 +1,229 @@
+/*Ab hier werden Textstellen in einer anderen Schriftfarbe, Größe, Schriftart dargestellt*/
+h1 {
+    color: #bb24c0; 
+    font-family: 'Lucida Sans';
+    }
+    
+h2 {
+    color: #5d9164; 
+    }
+    
+b {
+    color: #F4319C;
+    font-size: 20px;                /*Schriftgröße*/
+    }
+    
+p {
+    color: #FF9030;             /*Farbe*/
+    font-family: 'Verdana';         /*Schriftart*/
+    }
+    
+    /*Hier wird eine Hintergrundfarbe vergeben*/
+body {
+        background-color: #f9eeb7cd;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 1fr 720px 250px 1fr;
+        grid-template-areas: 
+        ". g-header g-header ."
+        ". g-nav g-nav ."
+        ". g-main g-aside ."
+        ". g-footer g-footer .";
+        height: 100vh;
+    }
+
+/*Mobile-Last-Ansicht*/
+#toggle, button.hamburger {
+    display:none;
+ }
+
+ 
+@media screen and (max-width: 960px) {
+    body{
+    grid-template-areas:
+      "g-header g-header"
+      "g-nav g-nav"
+      "g-main g-aside"
+      "g-footer g-footer";
+    grid-template-columns: 75% 25%;
+  }
+  #toggle-me {
+    display: none;
+ }
+ #toggle:checked ~ #toggle-me {
+    display: flex;
+    flex-direction: column;
+ }
+ #toggle-me li {
+    text-align: center;
+ }
+ nav{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+ }
+ button.hamburger {
+    display: block;
+ }
+ Button.hamburger label {
+    cursor: pointer;
+ }
+ }
+
+/*Mobile-Last-Ansicht*/
+@media screen and (max-width: 500px) {
+    body{
+    grid-template-areas:
+      "g-header"
+      "g-nav"
+      "g-main" 
+      "g-aside"
+      "g-footer";
+    grid-template-columns: 100%;
+  }
+  main{
+    height: 500px;
+  }
+  
+}
+    
+    /*Hier werden Hyperlinks Formatiert*/
+a:link {
+    color: #4caabf;
+    text-decoration: none;
+    }    
+    
+a:visited {
+    color: #a6a6a6;
+    }
+    
+a:active {
+    color: #680252;
+    }
+    
+a:hover {
+    color: #F4319C;
+    background-color: #020202; 
+    }
+    
+table{
+        border: 3px double #305535;
+        border-spacing: 0;
+    }
+    
+th, td{
+        color: #5d9164;
+    }
+    
+img {
+        height: auto;
+        width: 200px;
+        float: left;
+        margin: 10px;
+    }
+    
+#Strand {
+        box-shadow: 8px 8px 10px #000000;
+    }
+    
+#Drink {
+        border: 7px double #bb24c0;
+    }
+    
+#Zimmer {
+        border-radius: 50%;
+    }
+    
+header {
+        border: 1px solid green;
+        background-color: lightgreen;
+        border-radius: 20px;
+        margin: 10px;                   /*außenabstand rahmen*/
+        padding: 5px;                   /*innenabstand rahmen*/
+        text-align: center;             /*text zentrieren*/
+        grid-area: g-header;
+    }
+    
+nav {
+            border: 1px solid blue;
+            background-color: lightblue;
+            border-radius: 20px;
+            margin: 10px;
+            padding: 5px;
+            grid-area: g-nav;
+    }
+    
+main {
+        border: 1px solid goldenrod;
+        background-color: palegoldenrod;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 15px;
+        grid-area: g-main;
+    }
+    
+section {
+        border: 1px solid red;
+        background-color: lightcoral;
+        border-radius: 20px;
+        margin: 10px 0px 10px 0px;
+        padding: 0px 0px 0px 20px;
+    }
+    
+aside {
+        border: 1px solid orange;
+        background-color: lightsalmon;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 5px;
+        height: auto;
+        grid-area: g-aside;
+        display: flex;                      /*Abstand und Mittigsetzung der Bilder*/
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+}
+    
+footer {
+        border: 1px solid violet;
+        background-color: rosybrown;
+        border-radius: 20px;
+        margin: 5px;
+        padding: 5px;
+        grid-area: g-footer
+}
+
+#Inhalt {
+    border: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.Hintergrund {
+    background-color: palegoldenrod;
+    display: contents; 
+}
+
+
+nav>ul {
+    list-style-type: none; /*Aufzählungspunkte ausblenden */
+    display: flex; /* Flexbox-Container */
+    justify-content: left;
+}
+
+nav a {
+    display: block; /* Menü Items werden eine "Box" und machen sich damit so groß wie das Elternelement <li> */
+    background-color: #dbd3bd87; 
+    text-decoration: none; /* keine Unterstreichung */
+    padding: 10px; /* Abstand im den Link */
+    padding: 1em; /* Abstand im den Link */
+    transition: all 1s ease; /* Überblendeffekt */
+}
+      
+nav a:hover {
+    background-color: #6ab77455;
+}
+
+ul {
+    list-style-type: square;
+}
